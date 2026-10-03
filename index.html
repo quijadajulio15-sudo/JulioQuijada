@@ -76,6 +76,8 @@
             font-weight: bold;
         }
 
+        /* Desktop navigation */
+
         nav {
             display: flex;
             align-items: center;
@@ -96,9 +98,7 @@
             color: #2563eb;
         }
 
-        /* =========================
-           DROPDOWN
-        ========================= */
+        /* Desktop dropdown */
 
         .dropdown {
             position: relative;
@@ -165,6 +165,76 @@
         .dropdown-content a:hover {
             background: #dbeafe;
             color: #2563eb;
+        }
+
+        /* Mobile menu button */
+
+        .menu-toggle {
+            display: none;
+            border: none;
+            background: #dbeafe;
+            color: #2563eb;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            font-size: 25px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mobile menu */
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu > a,
+        .mobile-resources-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 14px 10px;
+            color: #475569;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .mobile-menu > a:hover,
+        .mobile-resources-btn:hover {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        .mobile-resources {
+            margin-top: 2px;
+        }
+
+        .mobile-submenu {
+            display: none;
+            padding: 0 0 8px 15px;
+        }
+
+        .mobile-submenu.open {
+            display: block;
+        }
+
+        .mobile-submenu a {
+            display: block;
+            padding: 12px 10px;
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .mobile-submenu a:hover {
+            background: #eef4ff;
         }
 
         /* =========================
@@ -321,10 +391,6 @@
             margin-bottom: 20px;
         }
 
-        /* =========================
-           INFO LIST
-        ========================= */
-
         .info-list {
             list-style: none;
             display: grid;
@@ -345,7 +411,7 @@
         }
 
         /* =========================
-           DARK SECTION
+           DARK SECTIONS
         ========================= */
 
         .dark-section {
@@ -631,8 +697,36 @@
                 padding: 0 5%;
             }
 
+            /* Hide desktop navigation */
+
             nav {
                 display: none;
+            }
+
+            /* Show hamburger */
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            /* Mobile menu */
+
+            .mobile-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                border-top: 1px solid #e2e8f0;
+                box-shadow: 0 15px 30px rgba(15,23,42,.12);
+                padding: 15px 5%;
+                display: none;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+
+            .mobile-menu.open {
+                display: block;
             }
 
             .hero-content,
@@ -669,13 +763,35 @@
         }
 
         /* =========================
-           SMALL MOBILE
+           SMALL PHONES
         ========================= */
 
         @media (max-width:550px) {
 
+            header {
+                height: 65px;
+            }
+
             .logo {
-                font-size: 16px;
+                font-size: 15px;
+                gap: 8px;
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 14px;
+            }
+
+            .menu-toggle {
+                width: 42px;
+                height: 42px;
+                font-size: 23px;
+            }
+
+            .mobile-menu {
+                top: 65px;
+                max-height: calc(100vh - 65px);
             }
 
             .hero h1 {
@@ -709,8 +825,19 @@
             .commerce-text {
                 padding: 28px;
             }
-        }
 
+            .commerce-text h3 {
+                font-size: 27px;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+        }
     </style>
 </head>
 
@@ -723,16 +850,75 @@
     <header>
 
         <div class="logo">
-
-            <div class="logo-icon">
-                EN
-            </div>
-
+            <div class="logo-icon">EN</div>
             English & Technology
-
         </div>
 
+        <!-- Desktop navigation -->
+
         <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#world">
+                English in the World
+            </a>
+
+            <a href="#technology">
+                English & Technology
+            </a>
+
+            <a href="#knowledge">
+                Shared Knowledge
+            </a>
+
+            <a href="#commerce">
+                Commerce
+            </a>
+
+            <a href="#learning">
+                Learning English
+            </a>
+
+            <div class="dropdown">
+
+                <a href="#" class="dropbtn">
+                    Resources ▾
+                </a>
+
+                <div class="dropdown-content">
+
+                    <a
+                        href="https://canva.link/ubqw30lie85biba"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Presentation
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- Mobile hamburger button -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <!-- Mobile navigation -->
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+        >
 
             <a href="#home">
                 Home
@@ -758,17 +944,19 @@
                 Learning English
             </a>
 
-            <!-- RESOURCES DROPDOWN -->
+            <div class="mobile-resources">
 
-            <div class="dropdown">
-
-                <a href="#" class="dropbtn">
+                <button
+                    class="mobile-resources-btn"
+                    id="mobileResourcesBtn"
+                >
                     Resources ▾
-                </a>
+                </button>
 
-                <div class="dropdown-content">
-
-                    <!-- DIRECT CANVA LINK -->
+                <div
+                    class="mobile-submenu"
+                    id="mobileSubmenu"
+                >
 
                     <a
                         href="https://canva.link/ubqw30lie85biba"
@@ -782,16 +970,19 @@
 
             </div>
 
-        </nav>
+        </div>
 
     </header>
 
 
     <!-- =========================
-         COVER
+         HOME
     ========================= -->
 
-    <section class="hero" id="home">
+    <section
+        class="hero"
+        id="home"
+    >
 
         <div class="hero-content">
 
@@ -868,6 +1059,7 @@
 
             </div>
 
+
             <div class="content-grid">
 
                 <div class="content-image">
@@ -878,6 +1070,7 @@
                     >
 
                 </div>
+
 
                 <div class="content-text">
 
@@ -891,6 +1084,7 @@
                         entertainment, and international
                         communication.
                     </p>
+
 
                     <ul class="info-list">
 
@@ -937,7 +1131,10 @@
          ENGLISH AND TECHNOLOGY
     ========================= -->
 
-    <section id="technology" class="dark-section">
+    <section
+        id="technology"
+        class="dark-section"
+    >
 
         <div class="section-container">
 
@@ -958,6 +1155,7 @@
 
             </div>
 
+
             <div class="content-grid">
 
                 <div class="content-text">
@@ -973,6 +1171,7 @@
                         can therefore help people understand
                         and use technology more effectively.
                     </p>
+
 
                     <div class="cards">
 
@@ -994,6 +1193,7 @@
 
                         </div>
 
+
                         <div class="card">
 
                             <div class="card-icon">
@@ -1010,6 +1210,7 @@
                             </p>
 
                         </div>
+
 
                         <div class="card">
 
@@ -1031,6 +1232,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="content-image">
 
@@ -1073,6 +1275,7 @@
 
             </div>
 
+
             <div class="content-grid">
 
                 <div class="content-image">
@@ -1083,6 +1286,7 @@
                     >
 
                 </div>
+
 
                 <div class="content-text">
 
@@ -1096,6 +1300,7 @@
                         and communities to share information
                         and collaborate across distances.
                     </p>
+
 
                     <ul class="info-list">
 
@@ -1142,7 +1347,10 @@
          TECHNOLOGY IN COMMERCE
     ========================= -->
 
-    <section id="commerce" class="dark-section">
+    <section
+        id="commerce"
+        class="dark-section"
+    >
 
         <div class="section-container">
 
@@ -1163,6 +1371,7 @@
 
             </div>
 
+
             <div class="commerce-box">
 
                 <div class="commerce-image">
@@ -1173,6 +1382,7 @@
                     >
 
                 </div>
+
 
                 <div class="commerce-text">
 
@@ -1187,11 +1397,14 @@
                         purchase products and services online.
                     </p>
 
+
                     <div class="commerce-points">
 
                         <div class="commerce-point">
 
-                            <span>1</span>
+                            <span>
+                                1
+                            </span>
 
                             <p>
                                 <strong>E-Commerce:</strong>
@@ -1201,9 +1414,12 @@
 
                         </div>
 
+
                         <div class="commerce-point">
 
-                            <span>2</span>
+                            <span>
+                                2
+                            </span>
 
                             <p>
                                 <strong>Communication:</strong>
@@ -1214,9 +1430,12 @@
 
                         </div>
 
+
                         <div class="commerce-point">
 
-                            <span>3</span>
+                            <span>
+                                3
+                            </span>
 
                             <p>
                                 <strong>Digital Payments:</strong>
@@ -1226,9 +1445,12 @@
 
                         </div>
 
+
                         <div class="commerce-point">
 
-                            <span>4</span>
+                            <span>
+                                4
+                            </span>
 
                             <p>
                                 <strong>Global Markets:</strong>
@@ -1250,7 +1472,7 @@
 
 
     <!-- =========================
-         LEARNING ENGLISH ONLINE
+         LEARNING ENGLISH
     ========================= -->
 
     <section id="learning">
@@ -1274,6 +1496,7 @@
 
             </div>
 
+
             <div class="content-grid">
 
                 <div class="content-text">
@@ -1288,6 +1511,7 @@
                         exercises, readings, applications,
                         and interactive activities.
                     </p>
+
 
                     <ul class="info-list">
 
@@ -1323,6 +1547,7 @@
 
                 </div>
 
+
                 <div class="content-image">
 
                     <img
@@ -1333,6 +1558,7 @@
                 </div>
 
             </div>
+
 
             <div class="learning-grid">
 
@@ -1350,6 +1576,7 @@
 
                 </div>
 
+
                 <div class="learning-card">
 
                     <h3>
@@ -1363,6 +1590,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="learning-card">
 
@@ -1386,7 +1614,7 @@
 
 
     <!-- =========================
-         RESOURCES / PRESENTATION
+         PRESENTATION RESOURCE
     ========================= -->
 
     <section id="presentation">
@@ -1410,6 +1638,7 @@
 
             </div>
 
+
             <div class="cards">
 
                 <div class="card">
@@ -1429,6 +1658,7 @@
 
                 </div>
 
+
                 <div class="card">
 
                     <div class="card-icon">
@@ -1445,6 +1675,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="card">
 
@@ -1463,6 +1694,7 @@
 
                 </div>
 
+
                 <div class="card">
 
                     <div class="card-icon">
@@ -1479,6 +1711,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="card">
 
@@ -1549,7 +1782,7 @@
 
 
     <!-- =========================
-         BACK TO TOP
+         BACK TO TOP BUTTON
     ========================= -->
 
     <button
@@ -1566,6 +1799,8 @@
     ========================= -->
 
     <script>
+
+        /* Back to top */
 
         const topButton =
             document.getElementById("topButton");
@@ -1597,11 +1832,119 @@
 
         }
 
+
+        /* Mobile menu */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        const mobileResourcesBtn =
+            document.getElementById("mobileResourcesBtn");
+
+        const mobileSubmenu =
+            document.getElementById("mobileSubmenu");
+
+
+        /* Open and close mobile menu */
+
+        menuToggle.addEventListener("click", function() {
+
+            const isOpen =
+                mobileMenu.classList.toggle("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close menu"
+                    : "Open menu"
+            );
+
+            menuToggle.textContent =
+                isOpen ? "✕" : "☰";
+
+        });
+
+
+        /* Open Resources submenu */
+
+        mobileResourcesBtn.addEventListener(
+            "click",
+            function() {
+
+                mobileSubmenu.classList.toggle("open");
+
+            }
+        );
+
+
+        /* Close mobile menu when a link is selected */
+
+        document
+            .querySelectorAll(".mobile-menu a")
+            .forEach(function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        mobileMenu.classList.remove("open");
+
+                        mobileSubmenu.classList.remove("open");
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        menuToggle.setAttribute(
+                            "aria-label",
+                            "Open menu"
+                        );
+
+                        menuToggle.textContent = "☰";
+
+                    }
+                );
+
+            });
+
+
+        /* Close mobile menu if screen becomes desktop */
+
+        window.addEventListener(
+            "resize",
+            function() {
+
+                if (window.innerWidth > 950) {
+
+                    mobileMenu.classList.remove("open");
+
+                    mobileSubmenu.classList.remove("open");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuToggle.textContent = "☰";
+
+                }
+
+            }
+        );
+
     </script>
 
 </body>
 </html>
 ```
-
 
 
