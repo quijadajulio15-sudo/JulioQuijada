@@ -1,17 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>English, Technology & Knowledge</title>
 
     <style>
-
-        /* ==============================
-           GENERAL
-        ============================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -38,10 +33,9 @@
             text-decoration: none;
         }
 
-
-        /* ==============================
-           NAVIGATION BAR
-        ============================== */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             position: fixed;
@@ -49,18 +43,13 @@
             left: 0;
             width: 100%;
             height: 70px;
-
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255,255,255,.96);
             backdrop-filter: blur(12px);
-
             border-bottom: 1px solid #e2e8f0;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            padding: 0 7%;
-
+            padding: 0 5%;
             z-index: 1000;
         }
 
@@ -68,60 +57,125 @@
             display: flex;
             align-items: center;
             gap: 12px;
-
             font-size: 19px;
             font-weight: bold;
-
             color: #2563eb;
+            white-space: nowrap;
         }
 
         .logo-icon {
             width: 42px;
             height: 42px;
-
             border-radius: 12px;
-
             background: #2563eb;
             color: white;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-size: 16px;
             font-weight: bold;
         }
 
         nav {
             display: flex;
-            gap: 24px;
+            align-items: center;
+            gap: 20px;
         }
 
-        nav a {
+        nav > a,
+        .dropbtn {
             color: #475569;
             font-size: 13px;
             font-weight: bold;
-
-            transition: 0.3s;
+            transition: .3s;
+            white-space: nowrap;
         }
 
-        nav a:hover {
+        nav > a:hover,
+        .dropbtn:hover {
             color: #2563eb;
         }
 
+        /* =========================
+           DROPDOWN
+        ========================= */
 
-        /* ==============================
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            display: block;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: calc(100% + 15px);
+            right: 0;
+            min-width: 190px;
+            background: white;
+            border-radius: 14px;
+            padding: 8px;
+            box-shadow: 0 15px 35px rgba(15,23,42,.15);
+            border: 1px solid #e2e8f0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition:
+                opacity .25s ease,
+                transform .25s ease,
+                visibility .25s ease;
+            z-index: 2000;
+        }
+
+        .dropdown-content::before {
+            content: "";
+            position: absolute;
+            top: -7px;
+            right: 25px;
+            width: 14px;
+            height: 14px;
+            background: white;
+            border-left: 1px solid #e2e8f0;
+            border-top: 1px solid #e2e8f0;
+            transform: rotate(45deg);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 11px 14px;
+            color: #475569;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 9px;
+            white-space: nowrap;
+            transition: .25s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dropdown-content a:hover {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+
+        /* =========================
            HERO
-        ============================== */
+        ========================= */
 
         .hero {
             min-height: 100vh;
-
             padding: 120px 8% 80px;
-
             display: flex;
             align-items: center;
-
             background:
                 linear-gradient(
                     135deg,
@@ -134,40 +188,28 @@
         .hero-content {
             width: 100%;
             max-width: 1200px;
-
             margin: auto;
-
             display: grid;
             grid-template-columns: 1fr 1fr;
-
             gap: 70px;
-
             align-items: center;
         }
 
         .hero-text span {
             display: inline-block;
-
             background: #dbeafe;
             color: #2563eb;
-
             padding: 8px 16px;
-
             border-radius: 50px;
-
             font-size: 12px;
             font-weight: bold;
-
             margin-bottom: 20px;
         }
 
         .hero h1 {
             font-size: clamp(45px, 6vw, 76px);
-
             line-height: 1.02;
-
             color: #0f172a;
-
             margin-bottom: 25px;
         }
 
@@ -177,9 +219,7 @@
 
         .hero p {
             max-width: 580px;
-
             color: #64748b;
-
             font-size: 18px;
         }
 
@@ -189,38 +229,25 @@
 
         .hero-image img {
             height: 470px;
-
             object-fit: cover;
-
             border-radius: 30px;
-
-            box-shadow:
-                0 25px 60px rgba(37, 99, 235, 0.18);
+            box-shadow: 0 25px 60px rgba(37,99,235,.18);
         }
 
         .floating-card {
             position: absolute;
-
             bottom: -25px;
             left: -25px;
-
             width: 220px;
-
             padding: 20px;
-
             background: white;
-
             border-radius: 18px;
-
-            box-shadow:
-                0 15px 35px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,.12);
         }
 
         .floating-card strong {
             display: block;
-
             color: #2563eb;
-
             font-size: 25px;
         }
 
@@ -228,10 +255,9 @@
             color: #64748b;
         }
 
-
-        /* ==============================
+        /* =========================
            GENERAL SECTIONS
-        ============================== */
+        ========================= */
 
         section {
             padding: 100px 8%;
@@ -244,107 +270,73 @@
 
         .section-title {
             text-align: center;
-
             margin-bottom: 55px;
         }
 
         .section-number {
             display: inline-block;
-
             background: #dbeafe;
             color: #2563eb;
-
             padding: 7px 14px;
-
             border-radius: 50px;
-
             font-size: 12px;
             font-weight: bold;
-
             margin-bottom: 15px;
         }
 
         .section-title h2 {
-            font-size: clamp(32px, 4vw, 48px);
-
+            font-size: clamp(32px,4vw,48px);
             color: #0f172a;
-
             margin-bottom: 12px;
         }
 
         .section-title p {
             max-width: 720px;
-
             margin: auto;
-
             color: #64748b;
         }
 
-
-        /* ==============================
-           CONTENT GRID
-        ============================== */
-
         .content-grid {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 45px;
-
             align-items: center;
         }
 
         .content-image img {
             height: 420px;
-
             object-fit: cover;
-
             border-radius: 25px;
-
-            box-shadow:
-                0 20px 40px rgba(15, 23, 42, 0.12);
+            box-shadow: 0 20px 40px rgba(15,23,42,.12);
         }
 
         .content-text h3 {
             font-size: 29px;
-
             color: #0f172a;
-
             margin-bottom: 18px;
         }
 
         .content-text p {
             color: #64748b;
-
             margin-bottom: 20px;
         }
 
-
-        /* ==============================
-           INFORMATION LIST
-        ============================== */
+        /* =========================
+           INFO LIST
+        ========================= */
 
         .info-list {
             list-style: none;
-
             display: grid;
-
             gap: 13px;
         }
 
         .info-list li {
             background: white;
-
             padding: 16px 18px;
-
             border-radius: 13px;
-
             border-left: 4px solid #2563eb;
-
-            box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.05);
-
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
             color: #64748b;
         }
 
@@ -352,14 +344,12 @@
             color: #172033;
         }
 
-
-        /* ==============================
+        /* =========================
            DARK SECTION
-        ============================== */
+        ========================= */
 
         .dark-section {
             background: #0f172a;
-
             color: white;
         }
 
@@ -379,97 +369,92 @@
             color: #cbd5e1;
         }
 
-
-        /* ==============================
+        /* =========================
            CARDS
-        ============================== */
+        ========================= */
 
         .cards {
             display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
+            grid-template-columns: repeat(3,1fr);
             gap: 20px;
-
             margin-top: 35px;
         }
 
         .card {
             background: white;
-
             border-radius: 20px;
-
             padding: 27px;
-
-            box-shadow:
-                0 8px 25px rgba(15, 23, 42, 0.07);
-
+            box-shadow: 0 8px 25px rgba(15,23,42,.07);
             transition:
-                transform 0.3s,
-                box-shadow 0.3s;
+                transform .3s,
+                box-shadow .3s;
         }
 
         .card:hover {
             transform: translateY(-7px);
-
-            box-shadow:
-                0 15px 35px rgba(15, 23, 42, 0.12);
+            box-shadow: 0 15px 35px rgba(15,23,42,.12);
         }
 
         .card-icon {
             width: 48px;
             height: 48px;
-
             border-radius: 14px;
-
             background: #dbeafe;
             color: #2563eb;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-size: 22px;
-
             margin-bottom: 18px;
         }
 
         .card h3 {
             color: #0f172a;
-
             margin-bottom: 10px;
         }
 
         .card p {
             color: #64748b;
-
             font-size: 14px;
         }
 
+        /* =========================
+           PRESENTATION
+        ========================= */
 
-        /* ==============================
-           COMMERCE SECTION
-        ============================== */
+        #presentation {
+            background: #eef4ff;
+        }
+
+        #presentation .cards {
+            grid-template-columns: repeat(5,1fr);
+        }
+
+        #presentation .card {
+            text-align: center;
+        }
+
+        #presentation .card-icon {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* =========================
+           COMMERCE
+        ========================= */
 
         .commerce-box {
             display: grid;
-
-            grid-template-columns: 1.1fr 0.9fr;
-
+            grid-template-columns: 1.1fr .9fr;
             background: white;
-
             border-radius: 28px;
-
             overflow: hidden;
-
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 15px 40px rgba(0,0,0,.08);
         }
 
         .commerce-image img {
             height: 100%;
             min-height: 500px;
-
             object-fit: cover;
         }
 
@@ -479,45 +464,35 @@
 
         .commerce-text h3 {
             font-size: 32px;
-
             color: #0f172a;
-
             margin-bottom: 20px;
         }
 
         .commerce-text > p {
             color: #64748b;
-
             margin-bottom: 28px;
         }
 
         .commerce-points {
             display: grid;
-
             gap: 18px;
         }
 
         .commerce-point {
             display: flex;
-
             gap: 14px;
-
             align-items: flex-start;
         }
 
         .commerce-point span {
             min-width: 35px;
             height: 35px;
-
             border-radius: 10px;
-
             background: #dbeafe;
             color: #2563eb;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-weight: bold;
         }
 
@@ -525,94 +500,71 @@
             color: #64748b;
         }
 
-
-        /* ==============================
-           LEARNING CARDS
-        ============================== */
+        /* =========================
+           LEARNING
+        ========================= */
 
         .learning-grid {
             display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
+            grid-template-columns: repeat(3,1fr);
             gap: 25px;
-
             margin-top: 45px;
         }
 
         .learning-card {
             background: white;
-
             border-radius: 22px;
-
             padding: 30px;
-
             border-top: 5px solid #2563eb;
-
-            box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 25px rgba(0,0,0,.06);
         }
 
         .learning-card h3 {
             color: #0f172a;
-
             margin-bottom: 12px;
         }
 
         .learning-card p {
             color: #64748b;
-
             font-size: 15px;
         }
 
-
-        /* ==============================
+        /* =========================
            CONCLUSION
-        ============================== */
+        ========================= */
 
         .conclusion {
             text-align: center;
-
             background:
                 linear-gradient(
                     135deg,
                     #2563eb,
                     #1d4ed8
                 );
-
             color: white;
         }
 
         .conclusion h2 {
-            font-size: clamp(34px, 5vw, 55px);
-
+            font-size: clamp(34px,5vw,55px);
             margin-bottom: 20px;
         }
 
         .conclusion p {
             max-width: 760px;
-
             margin: auto;
-
             color: #dbeafe;
-
             font-size: 18px;
         }
 
-
-        /* ==============================
+        /* =========================
            FOOTER
-        ============================== */
+        ========================= */
 
         footer {
             background: #0f172a;
-
             color: #94a3b8;
-
             text-align: center;
-
             padding: 30px 20px;
-
             font-size: 14px;
         }
 
@@ -620,37 +572,24 @@
             color: white;
         }
 
-
-        /* ==============================
-           TOP BUTTON
-        ============================== */
+        /* =========================
+           BACK TO TOP
+        ========================= */
 
         #topButton {
             position: fixed;
-
             right: 25px;
             bottom: 25px;
-
             width: 48px;
             height: 48px;
-
             border: none;
-
             border-radius: 50%;
-
             background: #2563eb;
-
             color: white;
-
             font-size: 20px;
-
             cursor: pointer;
-
-            box-shadow:
-                0 10px 25px rgba(37, 99, 235, 0.3);
-
+            box-shadow: 0 10px 25px rgba(37,99,235,.3);
             display: none;
-
             z-index: 999;
         }
 
@@ -658,12 +597,35 @@
             display: block;
         }
 
+        /* =========================
+           TABLET
+        ========================= */
 
-        /* ==============================
-           RESPONSIVE
-        ============================== */
+        @media (max-width:1200px) {
 
-        @media (max-width: 950px) {
+            header {
+                padding: 0 3%;
+            }
+
+            nav {
+                gap: 13px;
+            }
+
+            nav > a,
+            .dropbtn {
+                font-size: 11px;
+            }
+
+            #presentation .cards {
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width:950px) {
 
             header {
                 padding: 0 5%;
@@ -696,7 +658,8 @@
             }
 
             .cards,
-            .learning-grid {
+            .learning-grid,
+            #presentation .cards {
                 grid-template-columns: 1fr;
             }
 
@@ -705,8 +668,11 @@
             }
         }
 
+        /* =========================
+           SMALL MOBILE
+        ========================= */
 
-        @media (max-width: 550px) {
+        @media (max-width:550px) {
 
             .logo {
                 font-size: 16px;
@@ -726,10 +692,8 @@
 
             .floating-card {
                 position: relative;
-
                 left: 0;
                 bottom: 0;
-
                 margin-top: -25px;
                 margin-left: 20px;
             }
@@ -750,13 +714,11 @@
     </style>
 </head>
 
-
 <body>
 
-
-    <!-- =====================================
+    <!-- =========================
          HEADER
-    ====================================== -->
+    ========================= -->
 
     <header>
 
@@ -770,10 +732,11 @@
 
         </div>
 
-
         <nav>
 
-            <a href="#home">Home</a>
+            <a href="#home">
+                Home
+            </a>
 
             <a href="#world">
                 English in the World
@@ -795,20 +758,42 @@
                 Learning English
             </a>
 
+            <!-- RESOURCES DROPDOWN -->
+
+            <div class="dropdown">
+
+                <a href="#" class="dropbtn">
+                    Resources ▾
+                </a>
+
+                <div class="dropdown-content">
+
+                    <!-- DIRECT CANVA LINK -->
+
+                    <a
+                        href="https://canva.link/ubqw30lie85biba"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Presentation
+                    </a>
+
+                </div>
+
+            </div>
+
         </nav>
 
     </header>
 
 
-
-    <!-- =====================================
-         1. COVER
-    ====================================== -->
+    <!-- =========================
+         COVER
+    ========================= -->
 
     <section class="hero" id="home">
 
         <div class="hero-content">
-
 
             <div class="hero-text">
 
@@ -816,43 +801,37 @@
                     REALITY & VIRTUALITY RESOURCE
                 </span>
 
-
                 <h1>
-
                     English,
                     <strong>Technology</strong>
                     & Knowledge
-
                 </h1>
 
-
                 <p>
-
                     Discover how English and technology
                     connect people, information, education,
-                    communication, and commerce around the world.
-
+                    communication, and commerce around
+                    the world.
                 </p>
 
             </div>
-
-
 
             <div class="hero-image">
 
                 <img
                     src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
-                    alt="Student using technology">
-
+                    alt="Student using technology"
+                >
 
                 <div class="floating-card">
 
                     <strong>
-                        5 Topics
+                        6 Topics
                     </strong>
 
                     <small>
-                        English in the world, English and technology, Shared knowledge, Technology in commerce, Learning English online.
+                        English, technology, knowledge,
+                        commerce, and online learning.
                     </small>
 
                 </div>
@@ -864,15 +843,13 @@
     </section>
 
 
-
-    <!-- =====================================
-         2. ENGLISH IN THE WORLD
-    ====================================== -->
+    <!-- =========================
+         ENGLISH IN THE WORLD
+    ========================= -->
 
     <section id="world">
 
         <div class="section-container">
-
 
             <div class="section-title">
 
@@ -891,20 +868,16 @@
 
             </div>
 
-
-
             <div class="content-grid">
-
 
                 <div class="content-image">
 
                     <img
                         src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=85"
-                        alt="World map and international communication">
+                        alt="World map and international communication"
+                    >
 
                 </div>
-
-
 
                 <div class="content-text">
 
@@ -912,68 +885,41 @@
                         A Language That Connects Cultures
                     </h3>
 
-
                     <p>
-
                         English has an important role in
                         education, science, business, tourism,
                         entertainment, and international
                         communication.
-
                     </p>
-
 
                     <ul class="info-list">
 
                         <li>
-
-                            <strong>
-                                Communication:
-                            </strong>
-
+                            <strong>Communication:</strong>
                             English can help people from
                             different countries communicate
                             with each other.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Education:
-                            </strong>
-
+                            <strong>Education:</strong>
                             Many books, academic resources,
                             courses, and research materials
                             are available in English.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Work:
-                            </strong>
-
+                            <strong>Work:</strong>
                             English is commonly used in
                             international companies and
                             professional environments.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Culture:
-                            </strong>
-
+                            <strong>Culture:</strong>
                             English gives access to music,
                             movies, literature, games,
                             and digital content.
-
                         </li>
 
                     </ul>
@@ -987,18 +933,13 @@
     </section>
 
 
+    <!-- =========================
+         ENGLISH AND TECHNOLOGY
+    ========================= -->
 
-    <!-- =====================================
-         3. ENGLISH AND TECHNOLOGY
-    ====================================== -->
-
-    <section
-        id="technology"
-        class="dark-section"
-    >
+    <section id="technology" class="dark-section">
 
         <div class="section-container">
-
 
             <div class="section-title">
 
@@ -1017,10 +958,7 @@
 
             </div>
 
-
-
             <div class="content-grid">
-
 
                 <div class="content-text">
 
@@ -1028,21 +966,15 @@
                         A Language of the Digital World
                     </h3>
 
-
                     <p>
-
                         Many computer programs, websites,
                         applications, tutorials, and digital
                         tools use English. Learning English
                         can therefore help people understand
                         and use technology more effectively.
-
                     </p>
 
-
-
                     <div class="cards">
-
 
                         <div class="card">
 
@@ -1055,16 +987,12 @@
                             </h3>
 
                             <p>
-
                                 Many interfaces, commands,
                                 programming terms, and technical
                                 documents use English.
-
                             </p>
 
                         </div>
-
-
 
                         <div class="card">
 
@@ -1077,15 +1005,11 @@
                             </h3>
 
                             <p>
-
                                 A large amount of online information
                                 is created or published in English.
-
                             </p>
 
                         </div>
-
-
 
                         <div class="card">
 
@@ -1098,26 +1022,22 @@
                             </h3>
 
                             <p>
-
                                 English is widely used in scientific
                                 publications and international research.
-
                             </p>
 
                         </div>
-
 
                     </div>
 
                 </div>
 
-
-
                 <div class="content-image">
 
                     <img
                         src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
-                        alt="Computer technology">
+                        alt="Computer technology"
+                    >
 
                 </div>
 
@@ -1128,15 +1048,13 @@
     </section>
 
 
-
-    <!-- =====================================
-         4. SHARED KNOWLEDGE
-    ====================================== -->
+    <!-- =========================
+         SHARED KNOWLEDGE
+    ========================= -->
 
     <section id="knowledge">
 
         <div class="section-container">
-
 
             <div class="section-title">
 
@@ -1155,20 +1073,16 @@
 
             </div>
 
-
-
             <div class="content-grid">
-
 
                 <div class="content-image">
 
                     <img
                         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=85"
-                        alt="Students sharing knowledge">
+                        alt="Students sharing knowledge"
+                    >
 
                 </div>
-
-
 
                 <div class="content-text">
 
@@ -1176,71 +1090,42 @@
                         Knowledge Without Borders
                     </h3>
 
-
                     <p>
-
                         The Internet has created new ways
                         for students, teachers, researchers,
                         and communities to share information
                         and collaborate across distances.
-
                     </p>
-
 
                     <ul class="info-list">
 
-
                         <li>
-
-                            <strong>
-                                Digital Libraries:
-                            </strong>
-
+                            <strong>Digital Libraries:</strong>
                             Online libraries provide access
                             to books, articles, documents,
                             and other educational materials.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Online Communities:
-                            </strong>
-
+                            <strong>Online Communities:</strong>
                             People with similar interests
                             can exchange ideas and help
                             solve problems.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Education:
-                            </strong>
-
+                            <strong>Education:</strong>
                             Digital resources allow students
                             from different places to access
                             learning materials.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Collaboration:
-                            </strong>
-
+                            <strong>Collaboration:</strong>
                             Digital tools allow people to
                             work together even when they
                             are in different locations.
-
                         </li>
-
 
                     </ul>
 
@@ -1253,18 +1138,13 @@
     </section>
 
 
+    <!-- =========================
+         TECHNOLOGY IN COMMERCE
+    ========================= -->
 
-    <!-- =====================================
-         5. TECHNOLOGY IN COMMERCE
-    ====================================== -->
-
-    <section
-        id="commerce"
-        class="dark-section"
-    >
+    <section id="commerce" class="dark-section">
 
         <div class="section-container">
-
 
             <div class="section-title">
 
@@ -1283,20 +1163,16 @@
 
             </div>
 
-
-
             <div class="commerce-box">
-
 
                 <div class="commerce-image">
 
                     <img
                         src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85"
-                        alt="Online shopping and electronic commerce">
+                        alt="Online shopping and electronic commerce"
+                    >
 
                 </div>
-
-
 
                 <div class="commerce-text">
 
@@ -1304,104 +1180,63 @@
                         Commerce in the Digital Age
                     </h3>
 
-
                     <p>
-
                         Digital platforms allow consumers
                         to discover products, compare options,
                         communicate with businesses, and
                         purchase products and services online.
-
                     </p>
-
-
 
                     <div class="commerce-points">
 
-
                         <div class="commerce-point">
 
-                            <span>
-                                1
-                            </span>
+                            <span>1</span>
 
                             <p>
-
-                                <strong>
-                                    E-Commerce:
-                                </strong>
-
+                                <strong>E-Commerce:</strong>
                                 People can purchase products
                                 and services using the Internet.
-
                             </p>
 
                         </div>
 
-
-
                         <div class="commerce-point">
 
-                            <span>
-                                2
-                            </span>
+                            <span>2</span>
 
                             <p>
-
-                                <strong>
-                                    Communication:
-                                </strong>
-
+                                <strong>Communication:</strong>
                                 Companies can communicate
                                 with customers through digital
                                 platforms.
-
                             </p>
 
                         </div>
 
-
-
                         <div class="commerce-point">
 
-                            <span>
-                                3
-                            </span>
+                            <span>3</span>
 
                             <p>
-
-                                <strong>
-                                    Digital Payments:
-                                </strong>
-
+                                <strong>Digital Payments:</strong>
                                 Technology provides different
                                 electronic payment methods.
-
                             </p>
 
                         </div>
-
-
 
                         <div class="commerce-point">
 
-                            <span>
-                                4
-                            </span>
+                            <span>4</span>
 
                             <p>
-
-                                <strong>
-                                    Global Markets:
-                                </strong>
-
+                                <strong>Global Markets:</strong>
                                 The Internet connects businesses
                                 and consumers across countries.
-
                             </p>
 
                         </div>
-
 
                     </div>
 
@@ -1414,15 +1249,13 @@
     </section>
 
 
-
-    <!-- =====================================
-         6. LEARNING ENGLISH ONLINE
-    ====================================== -->
+    <!-- =========================
+         LEARNING ENGLISH ONLINE
+    ========================= -->
 
     <section id="learning">
 
         <div class="section-container">
-
 
             <div class="section-title">
 
@@ -1441,10 +1274,7 @@
 
             </div>
 
-
-
             <div class="content-grid">
-
 
                 <div class="content-text">
 
@@ -1452,92 +1282,59 @@
                         Learn English From Anywhere
                     </h3>
 
-
                     <p>
-
                         Online platforms allow students to
                         learn English through courses,
                         exercises, readings, applications,
                         and interactive activities.
-
                     </p>
-
 
                     <ul class="info-list">
 
-
                         <li>
-
-                            <strong>
-                                Flexibility:
-                            </strong>
-
+                            <strong>Flexibility:</strong>
                             Students can choose when and
                             where they want to study.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Practice:
-                            </strong>
-
+                            <strong>Practice:</strong>
                             Online resources can provide
                             activities for vocabulary,
                             grammar, reading, writing,
                             listening, and pronunciation.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Resources:
-                            </strong>
-
+                            <strong>Resources:</strong>
                             Students can use many different
                             digital materials to complement
                             their classes.
-
                         </li>
 
-
                         <li>
-
-                            <strong>
-                                Communication:
-                            </strong>
-
+                            <strong>Communication:</strong>
                             Some digital platforms allow
                             learners to practice English
                             with people from different places.
-
                         </li>
-
 
                     </ul>
 
                 </div>
 
-
-
                 <div class="content-image">
 
                     <img
                         src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=85"
-                        alt="Student learning English online">
+                        alt="Student learning English online"
+                    >
 
                 </div>
 
             </div>
 
-
-
             <div class="learning-grid">
-
 
                 <div class="learning-card">
 
@@ -1546,16 +1343,12 @@
                     </h3>
 
                     <p>
-
                         Online courses provide structured
                         lessons that can help students develop
                         different English language skills.
-
                     </p>
 
                 </div>
-
-
 
                 <div class="learning-card">
 
@@ -1564,16 +1357,12 @@
                     </h3>
 
                     <p>
-
                         Mobile applications can help students
                         practice vocabulary, grammar, pronunciation,
                         and comprehension.
-
                     </p>
 
                 </div>
-
-
 
                 <div class="learning-card">
 
@@ -1582,15 +1371,12 @@
                     </h3>
 
                     <p>
-
                         Digital tools can give learners
                         opportunities to communicate with
                         people from different countries.
-
                     </p>
 
                 </div>
-
 
             </div>
 
@@ -1599,10 +1385,128 @@
     </section>
 
 
+    <!-- =========================
+         RESOURCES / PRESENTATION
+    ========================= -->
 
-    <!-- =====================================
+    <section id="presentation">
+
+        <div class="section-container">
+
+            <div class="section-title">
+
+                <span class="section-number">
+                    RESOURCE
+                </span>
+
+                <h2>
+                    Presentation
+                </h2>
+
+                <p>
+                    This resource contains the main topics
+                    presented throughout this project.
+                </p>
+
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🌎
+                    </div>
+
+                    <h3>
+                        English in the World
+                    </h3>
+
+                    <p>
+                        English connects people from different
+                        countries and cultures.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        English and Technology
+                    </h3>
+
+                    <p>
+                        English is widely used in digital tools,
+                        software, and online information.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Shared Knowledge
+                    </h3>
+
+                    <p>
+                        Technology makes it easier to share
+                        information and collaborate.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🛒
+                    </div>
+
+                    <h3>
+                        Technology in Commerce
+                    </h3>
+
+                    <p>
+                        Digital technology has transformed
+                        shopping and international commerce.
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Learning English Online
+                    </h3>
+
+                    <p>
+                        Online resources provide new ways
+                        to study and practice English.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
          CONCLUSION
-    ====================================== -->
+    ========================= -->
 
     <section class="conclusion">
 
@@ -1612,15 +1516,12 @@
                 English + Technology = New Opportunities
             </h2>
 
-
             <p>
-
                 English and technology are important parts
                 of an increasingly connected world. Together,
                 they can provide access to information,
                 education, communication, digital resources,
                 and new learning opportunities.
-
             </p>
 
         </div>
@@ -1628,10 +1529,9 @@
     </section>
 
 
-
-    <!-- =====================================
+    <!-- =========================
          FOOTER
-    ====================================== -->
+    ========================= -->
 
     <footer>
 
@@ -1648,10 +1548,9 @@
     </footer>
 
 
-
-    <!-- =====================================
-         BACK TO TOP BUTTON
-    ====================================== -->
+    <!-- =========================
+         BACK TO TOP
+    ========================= -->
 
     <button
         id="topButton"
@@ -1662,12 +1561,14 @@
     </button>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
         const topButton =
             document.getElementById("topButton");
-
 
         window.addEventListener("scroll", function() {
 
@@ -1698,6 +1599,9 @@
 
     </script>
 
-
 </body>
 </html>
+```
+
+
+
