@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -190,7 +189,8 @@
         }
 
         .mobile-menu > a,
-        .mobile-resources-btn {
+        .mobile-resources-btn,
+        .mobile-videos-btn {
             display: block;
             width: 100%;
             text-align: left;
@@ -206,12 +206,14 @@
         }
 
         .mobile-menu > a:hover,
-        .mobile-resources-btn:hover {
+        .mobile-resources-btn:hover,
+        .mobile-videos-btn:hover {
             background: #dbeafe;
             color: #2563eb;
         }
 
-        .mobile-resources {
+        .mobile-resources,
+        .mobile-videos {
             margin-top: 2px;
         }
 
@@ -881,13 +883,11 @@
             </a>
 
             <div class="dropdown">
-
                 <a href="#" class="dropbtn">
                     Resources ▾
                 </a>
 
                 <div class="dropdown-content">
-
                     <a
                         href="https://canva.link/ubqw30lie85biba"
                         target="_blank"
@@ -895,19 +895,30 @@
                     >
                         Presentation
                     </a>
-                    <!-- Agrega aquí: -->
-                   <a
-                       href="https://canva.link/561qyez8kpj16l2"
-                       target="_blank"
-                       rel="noopener noreferrer"
+                    <a
+                        href="https://canva.link/561qyez8kpj16l2"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                    Presentation 2
-                   </a>
-
-                    
-
+                        Presentation 2
+                    </a>
                 </div>
+            </div>
 
+            <div class="dropdown">
+                <a href="#" class="dropbtn">
+                    Videos ▾
+                </a>
+
+                <div class="dropdown-content">
+                    <a
+                        href="https://www.youtube.com/shorts/DXm4B2k7Y8M"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Watch short
+                    </a>
+                </div>
             </div>
 
         </nav>
@@ -955,10 +966,10 @@
             </a>
 
             <div class="mobile-resources">
-
                 <button
                     class="mobile-resources-btn"
                     id="mobileResourcesBtn"
+                    aria-expanded="false"
                 >
                     Resources ▾
                 </button>
@@ -967,7 +978,6 @@
                     class="mobile-submenu"
                     id="mobileSubmenu"
                 >
-
                     <a
                         href="https://canva.link/ubqw30lie85biba"
                         target="_blank"
@@ -975,9 +985,37 @@
                     >
                         Presentation
                     </a>
-
+                    <a
+                        href="https://canva.link/561qyez8kpj16l2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Presentation 2
+                    </a>
                 </div>
+            </div>
 
+            <div class="mobile-videos">
+                <button
+                    class="mobile-videos-btn"
+                    id="mobileVideosBtn"
+                    aria-expanded="false"
+                >
+                    Videos ▾
+                </button>
+
+                <div
+                    class="mobile-submenu"
+                    id="mobileVideosSubmenu"
+                >
+                    <a
+                        href="https://www.youtube.com/shorts/DXm4B2k7Y8M"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Watch short
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -998,963 +1036,333 @@
 
             <div class="hero-text">
 
-                <span>
-                    REALITY & VIRTUALITY RESOURCE
-                </span>
+                <span>English, Technology & Knowledge</span>
 
                 <h1>
-                    English,
-                    <strong>Technology</strong>
-                    & Knowledge
+                    Learn English with <strong>technology</strong>,
+                    culture and global communication.
                 </h1>
 
                 <p>
-                    Discover how English and technology
-                    connect people, information, education,
-                    communication, and commerce around
-                    the world.
+                    Discover how English connects people, ideas and opportunities in
+                    a world shaped by technology, innovation and knowledge.
                 </p>
 
             </div>
 
             <div class="hero-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85"
-                    alt="Student using technology"
-                >
-
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Students learning and collaborating">
                 <div class="floating-card">
-
-                    <strong>
-                        6 Topics
-                    </strong>
-
-                    <small>
-                        English, technology, knowledge,
-                        commerce, and online learning.
-                    </small>
-
+                    <strong>+500</strong>
+                    <small>students engaged in English learning</small>
                 </div>
-
             </div>
 
         </div>
 
     </section>
 
-
     <!-- =========================
-         ENGLISH IN THE WORLD
+         WORLD
     ========================= -->
 
     <section id="world">
-
         <div class="section-container">
-
             <div class="section-title">
-
-                <span class="section-number">
-                    01
-                </span>
-
-                <h2>
-                    English in the World
-                </h2>
-
+                <span class="section-number">01</span>
+                <h2>English in the World</h2>
                 <p>
-                    English is widely used as a language
-                    for international communication.
+                    English is not only a language; it is a bridge between cultures,
+                    economies and global opportunities.
                 </p>
-
             </div>
-
 
             <div class="content-grid">
-
                 <div class="content-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=85"
-                        alt="World map and international communication"
-                    >
-
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Global communication and languages">
                 </div>
-
 
                 <div class="content-text">
-
-                    <h3>
-                        A Language That Connects Cultures
-                    </h3>
-
+                    <h3>Why is English so important?</h3>
                     <p>
-                        English has an important role in
-                        education, science, business, tourism,
-                        entertainment, and international
-                        communication.
+                        English is widely used in education, technology, science,
+                        business and international communication. Learning it expands
+                        access to information and creates opportunities across borders.
                     </p>
-
-
                     <ul class="info-list">
-
-                        <li>
-                            <strong>Communication:</strong>
-                            English can help people from
-                            different countries communicate
-                            with each other.
-                        </li>
-
-                        <li>
-                            <strong>Education:</strong>
-                            Many books, academic resources,
-                            courses, and research materials
-                            are available in English.
-                        </li>
-
-                        <li>
-                            <strong>Work:</strong>
-                            English is commonly used in
-                            international companies and
-                            professional environments.
-                        </li>
-
-                        <li>
-                            <strong>Culture:</strong>
-                            English gives access to music,
-                            movies, literature, games,
-                            and digital content.
-                        </li>
-
+                        <li><strong>Global reach:</strong> It connects people from different countries.</li>
+                        <li><strong>Academic access:</strong> It opens doors to research and online learning.</li>
+                        <li><strong>Professional growth:</strong> It is essential in digital and international work.</li>
                     </ul>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
     <!-- =========================
-         ENGLISH AND TECHNOLOGY
+         TECHNOLOGY
     ========================= -->
 
-    <section
-        id="technology"
-        class="dark-section"
-    >
-
+    <section id="technology" class="dark-section">
         <div class="section-container">
-
             <div class="section-title">
-
-                <span class="section-number">
-                    02
-                </span>
-
-                <h2>
-                    English and Technology
-                </h2>
-
+                <span class="section-number">02</span>
+                <h2>English & Technology</h2>
                 <p>
-                    English and technology are closely
-                    connected in the modern digital world.
+                    Technology and language learning evolve together and create new ways to communicate.
                 </p>
-
             </div>
-
 
             <div class="content-grid">
-
                 <div class="content-text">
-
-                    <h3>
-                        A Language of the Digital World
-                    </h3>
-
+                    <h3>Learning in a digital world</h3>
                     <p>
-                        Many computer programs, websites,
-                        applications, tutorials, and digital
-                        tools use English. Learning English
-                        can therefore help people understand
-                        and use technology more effectively.
+                        Apps, online courses, videos and digital communities allow students to learn English anytime and anywhere.
+                        Technology also helps build confidence through practice and feedback.
                     </p>
-
-
-                    <div class="cards">
-
-                        <div class="card">
-
-                            <div class="card-icon">
-                                💻
-                            </div>
-
-                            <h3>
-                                Software
-                            </h3>
-
-                            <p>
-                                Many interfaces, commands,
-                                programming terms, and technical
-                                documents use English.
-                            </p>
-
-                        </div>
-
-
-                        <div class="card">
-
-                            <div class="card-icon">
-                                🌐
-                            </div>
-
-                            <h3>
-                                Internet
-                            </h3>
-
-                            <p>
-                                A large amount of online information
-                                is created or published in English.
-                            </p>
-
-                        </div>
-
-
-                        <div class="card">
-
-                            <div class="card-icon">
-                                🔬
-                            </div>
-
-                            <h3>
-                                Science
-                            </h3>
-
-                            <p>
-                                English is widely used in scientific
-                                publications and international research.
-                            </p>
-
-                        </div>
-
-                    </div>
-
+                    <ul class="info-list">
+                        <li><strong>Instant practice:</strong> Students can improve pronunciation and vocabulary quickly.</li>
+                        <li><strong>Global interaction:</strong> Online communities connect learners with native speakers.</li>
+                        <li><strong>Flexible learning:</strong> Learning becomes more accessible and personalized.</li>
+                    </ul>
                 </div>
-
 
                 <div class="content-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
-                        alt="Computer technology"
-                    >
-
+                    <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80" alt="Technology and learning">
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
     <!-- =========================
-         SHARED KNOWLEDGE
+         KNOWLEDGE
     ========================= -->
 
     <section id="knowledge">
-
         <div class="section-container">
-
             <div class="section-title">
-
-                <span class="section-number">
-                    03
-                </span>
-
-                <h2>
-                    Shared Knowledge
-                </h2>
-
+                <span class="section-number">03</span>
+                <h2>Shared Knowledge</h2>
                 <p>
-                    Technology makes it easier to create,
-                    find, and share knowledge.
+                    Communication is stronger when people share ideas, experiences and learning paths.
                 </p>
-
             </div>
 
+            <div class="cards">
+                <article class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Creativity</h3>
+                    <p>Language supports imagination and original thinking in every field.</p>
+                </article>
 
-            <div class="content-grid">
+                <article class="card">
+                    <div class="card-icon">🌍</div>
+                    <h3>Culture</h3>
+                    <p>English allows access to music, movies, literature and global culture.</p>
+                </article>
 
-                <div class="content-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=85"
-                        alt="Students sharing knowledge"
-                    >
-
-                </div>
-
-
-                <div class="content-text">
-
-                    <h3>
-                        Knowledge Without Borders
-                    </h3>
-
-                    <p>
-                        The Internet has created new ways
-                        for students, teachers, researchers,
-                        and communities to share information
-                        and collaborate across distances.
-                    </p>
-
-
-                    <ul class="info-list">
-
-                        <li>
-                            <strong>Digital Libraries:</strong>
-                            Online libraries provide access
-                            to books, articles, documents,
-                            and other educational materials.
-                        </li>
-
-                        <li>
-                            <strong>Online Communities:</strong>
-                            People with similar interests
-                            can exchange ideas and help
-                            solve problems.
-                        </li>
-
-                        <li>
-                            <strong>Education:</strong>
-                            Digital resources allow students
-                            from different places to access
-                            learning materials.
-                        </li>
-
-                        <li>
-                            <strong>Collaboration:</strong>
-                            Digital tools allow people to
-                            work together even when they
-                            are in different locations.
-                        </li>
-
-                    </ul>
-
-                </div>
-
+                <article class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Learning</h3>
+                    <p>Every conversation is an opportunity to improve and expand knowledge.</p>
+                </article>
             </div>
-
         </div>
-
     </section>
 
-
     <!-- =========================
-         TECHNOLOGY IN COMMERCE
-    ========================= -->
-
-    <section
-        id="commerce"
-        class="dark-section"
-    >
-
-        <div class="section-container">
-
-            <div class="section-title">
-
-                <span class="section-number">
-                    04
-                </span>
-
-                <h2>
-                    Technology in Commerce
-                </h2>
-
-                <p>
-                    Technology has changed how people
-                    buy, sell, communicate, and do business.
-                </p>
-
-            </div>
-
-
-            <div class="commerce-box">
-
-                <div class="commerce-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85"
-                        alt="Online shopping and electronic commerce"
-                    >
-
-                </div>
-
-
-                <div class="commerce-text">
-
-                    <h3>
-                        Commerce in the Digital Age
-                    </h3>
-
-                    <p>
-                        Digital platforms allow consumers
-                        to discover products, compare options,
-                        communicate with businesses, and
-                        purchase products and services online.
-                    </p>
-
-
-                    <div class="commerce-points">
-
-                        <div class="commerce-point">
-
-                            <span>
-                                1
-                            </span>
-
-                            <p>
-                                <strong>E-Commerce:</strong>
-                                People can purchase products
-                                and services using the Internet.
-                            </p>
-
-                        </div>
-
-
-                        <div class="commerce-point">
-
-                            <span>
-                                2
-                            </span>
-
-                            <p>
-                                <strong>Communication:</strong>
-                                Companies can communicate
-                                with customers through digital
-                                platforms.
-                            </p>
-
-                        </div>
-
-
-                        <div class="commerce-point">
-
-                            <span>
-                                3
-                            </span>
-
-                            <p>
-                                <strong>Digital Payments:</strong>
-                                Technology provides different
-                                electronic payment methods.
-                            </p>
-
-                        </div>
-
-
-                        <div class="commerce-point">
-
-                            <span>
-                                4
-                            </span>
-
-                            <p>
-                                <strong>Global Markets:</strong>
-                                The Internet connects businesses
-                                and consumers across countries.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         LEARNING ENGLISH
-    ========================= -->
-
-    <section id="learning">
-
-        <div class="section-container">
-
-            <div class="section-title">
-
-                <span class="section-number">
-                    05
-                </span>
-
-                <h2>
-                    Learning English Online
-                </h2>
-
-                <p>
-                    The Internet provides many resources
-                    for studying and practicing English.
-                </p>
-
-            </div>
-
-
-            <div class="content-grid">
-
-                <div class="content-text">
-
-                    <h3>
-                        Learn English From Anywhere
-                    </h3>
-
-                    <p>
-                        Online platforms allow students to
-                        learn English through courses,
-                        exercises, readings, applications,
-                        and interactive activities.
-                    </p>
-
-
-                    <ul class="info-list">
-
-                        <li>
-                            <strong>Flexibility:</strong>
-                            Students can choose when and
-                            where they want to study.
-                        </li>
-
-                        <li>
-                            <strong>Practice:</strong>
-                            Online resources can provide
-                            activities for vocabulary,
-                            grammar, reading, writing,
-                            listening, and pronunciation.
-                        </li>
-
-                        <li>
-                            <strong>Resources:</strong>
-                            Students can use many different
-                            digital materials to complement
-                            their classes.
-                        </li>
-
-                        <li>
-                            <strong>Communication:</strong>
-                            Some digital platforms allow
-                            learners to practice English
-                            with people from different places.
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <div class="content-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=85"
-                        alt="Student learning English online"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <div class="learning-grid">
-
-                <div class="learning-card">
-
-                    <h3>
-                        📚 Digital Courses
-                    </h3>
-
-                    <p>
-                        Online courses provide structured
-                        lessons that can help students develop
-                        different English language skills.
-                    </p>
-
-                </div>
-
-
-                <div class="learning-card">
-
-                    <h3>
-                        📱 Learning Apps
-                    </h3>
-
-                    <p>
-                        Mobile applications can help students
-                        practice vocabulary, grammar, pronunciation,
-                        and comprehension.
-                    </p>
-
-                </div>
-
-
-                <div class="learning-card">
-
-                    <h3>
-                        🌎 Communication
-                    </h3>
-
-                    <p>
-                        Digital tools can give learners
-                        opportunities to communicate with
-                        people from different countries.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         PRESENTATION RESOURCE
+         PRESENTATION
     ========================= -->
 
     <section id="presentation">
-
         <div class="section-container">
-
             <div class="section-title">
-
-                <span class="section-number">
-                    RESOURCE
-                </span>
-
-                <h2>
-                    Presentation
-                </h2>
-
+                <span class="section-number">04</span>
+                <h2>Presentation</h2>
                 <p>
-                    This resource contains the main topics
-                    presented throughout this project.
+                    Key ideas for understanding the role of English in everyday life and technology.
                 </p>
-
             </div>
-
 
             <div class="cards">
+                <article class="card">
+                    <div class="card-icon">1</div>
+                    <h3>Access</h3>
+                    <p>Internet and digital tools make learning more open and practical.</p>
+                </article>
 
-                <div class="card">
+                <article class="card">
+                    <div class="card-icon">2</div>
+                    <h3>Connection</h3>
+                    <p>English connects people across countries, schools and ideas.</p>
+                </article>
 
-                    <div class="card-icon">
-                        🌎
-                    </div>
+                <article class="card">
+                    <div class="card-icon">3</div>
+                    <h3>Growth</h3>
+                    <p>Knowledge grows when learners communicate and share experiences.</p>
+                </article>
 
-                    <h3>
-                        English in the World
-                    </h3>
+                <article class="card">
+                    <div class="card-icon">4</div>
+                    <h3>Innovation</h3>
+                    <p>Technology and language together drive creativity and progress.</p>
+                </article>
 
-                    <p>
-                        English connects people from different
-                        countries and cultures.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="card-icon">
-                        💻
-                    </div>
-
-                    <h3>
-                        English and Technology
-                    </h3>
-
-                    <p>
-                        English is widely used in digital tools,
-                        software, and online information.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="card-icon">
-                        🤝
-                    </div>
-
-                    <h3>
-                        Shared Knowledge
-                    </h3>
-
-                    <p>
-                        Technology makes it easier to share
-                        information and collaborate.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="card-icon">
-                        🛒
-                    </div>
-
-                    <h3>
-                        Technology in Commerce
-                    </h3>
-
-                    <p>
-                        Digital technology has transformed
-                        shopping and international commerce.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="card-icon">
-                        📚
-                    </div>
-
-                    <h3>
-                        Learning English Online
-                    </h3>
-
-                    <p>
-                        Online resources provide new ways
-                        to study and practice English.
-                    </p>
-
-                </div>
-
+                <article class="card">
+                    <div class="card-icon">5</div>
+                    <h3>Impact</h3>
+                    <p>English opens doors to opportunity, collaboration and success.</p>
+                </article>
             </div>
-
         </div>
-
     </section>
 
+    <!-- =========================
+         COMMERCE
+    ========================= -->
+
+    <section id="commerce">
+        <div class="section-container">
+            <div class="section-title">
+                <span class="section-number">05</span>
+                <h2>Commerce</h2>
+                <p>
+                    English supports business, negotiation and global commerce in the modern world.
+                </p>
+            </div>
+
+            <div class="commerce-box">
+                <div class="commerce-image">
+                    <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1000&q=80" alt="Business and commerce">
+                </div>
+
+                <div class="commerce-text">
+                    <h3>Language for business</h3>
+                    <p>
+                        In international markets, English is often the main language of communication.
+                        It helps with marketing, contracts, online sales and customer relations.
+                    </p>
+
+                    <div class="commerce-points">
+                        <div class="commerce-point">
+                            <span>1</span>
+                            <p>It supports communication between companies and international clients.</p>
+                        </div>
+
+                        <div class="commerce-point">
+                            <span>2</span>
+                            <p>It improves professionalism in digital commerce and remote work.</p>
+                        </div>
+
+                        <div class="commerce-point">
+                            <span>3</span>
+                            <p>It helps companies reach wider and more diverse audiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         LEARNING
+    ========================= -->
+
+    <section id="learning">
+        <div class="section-container">
+            <div class="section-title">
+                <span class="section-number">06</span>
+                <h2>Learning English</h2>
+                <p>
+                    A good strategy combines practice, consistency and motivation in real contexts.
+                </p>
+            </div>
+
+            <div class="learning-grid">
+                <article class="learning-card">
+                    <h3>Listen daily</h3>
+                    <p>Use podcasts, videos and short conversations to improve understanding.</p>
+                </article>
+
+                <article class="learning-card">
+                    <h3>Speak often</h3>
+                    <p>Practice speaking with classmates, teachers or online communities.</p>
+                </article>
+
+                <article class="learning-card">
+                    <h3>Read and write</h3>
+                    <p>Reading articles and writing reflections improves vocabulary and confidence.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
     <!-- =========================
          CONCLUSION
     ========================= -->
 
-    <section class="conclusion">
-
+    <section class="conclusion" style="padding-top: 110px; padding-bottom: 110px;">
         <div class="section-container">
-
-            <h2>
-                English + Technology = New Opportunities
-            </h2>
-
+            <h2>English is a tool for connection</h2>
             <p>
-                English and technology are important parts
-                of an increasingly connected world. Together,
-                they can provide access to information,
-                education, communication, digital resources,
-                and new learning opportunities.
+                When we learn English, we do not only study a language. We build bridges,
+                access knowledge and prepare for future opportunities in a global world.
             </p>
-
         </div>
-
     </section>
 
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
     <footer>
-
-        <p>
-            <strong>
-                English, Technology & Knowledge
-            </strong>
-        </p>
-
-        <p>
-            Reality & Virtuality Resource • School Project
-        </p>
-
+        <strong>English & Technology</strong> | Learning language through knowledge and innovation
     </footer>
 
-
-    <!-- =========================
-         BACK TO TOP BUTTON
-    ========================= -->
-
-    <button
-        id="topButton"
-        onclick="goTop()"
-        aria-label="Back to top"
-    >
-        ↑
-    </button>
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+    <button id="topButton" aria-label="Back to top">↑</button>
 
     <script>
+        const topButton = document.getElementById('topButton');
 
-        /* Back to top */
-
-        const topButton =
-            document.getElementById("topButton");
-
-        window.addEventListener("scroll", function() {
-
-            if (window.scrollY > 500) {
-
-                topButton.classList.add("show");
-
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                topButton.classList.add('show');
             } else {
-
-                topButton.classList.remove("show");
-
+                topButton.classList.remove('show');
             }
-
         });
 
+        topButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-        function goTop() {
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
 
-            window.scrollTo({
-
-                top: 0,
-
-                behavior: "smooth"
-
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('open');
+                menuToggle.setAttribute('aria-expanded', String(isOpen));
             });
-
         }
 
+        const mobileResourcesBtn = document.getElementById('mobileResourcesBtn');
+        const mobileSubmenu = document.getElementById('mobileSubmenu');
 
-        /* Mobile menu */
-
-        const menuToggle =
-            document.getElementById("menuToggle");
-
-        const mobileMenu =
-            document.getElementById("mobileMenu");
-
-        const mobileResourcesBtn =
-            document.getElementById("mobileResourcesBtn");
-
-        const mobileSubmenu =
-            document.getElementById("mobileSubmenu");
-
-
-        /* Open and close mobile menu */
-
-        menuToggle.addEventListener("click", function() {
-
-            const isOpen =
-                mobileMenu.classList.toggle("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen
-                    ? "Close menu"
-                    : "Open menu"
-            );
-
-            menuToggle.textContent =
-                isOpen ? "✕" : "☰";
-
-        });
-
-
-        /* Open Resources submenu */
-
-        mobileResourcesBtn.addEventListener(
-            "click",
-            function() {
-
-                mobileSubmenu.classList.toggle("open");
-
-            }
-        );
-
-
-        /* Close mobile menu when a link is selected */
-
-        document
-            .querySelectorAll(".mobile-menu a")
-            .forEach(function(link) {
-
-                link.addEventListener(
-                    "click",
-                    function() {
-
-                        mobileMenu.classList.remove("open");
-
-                        mobileSubmenu.classList.remove("open");
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                        menuToggle.setAttribute(
-                            "aria-label",
-                            "Open menu"
-                        );
-
-                        menuToggle.textContent = "☰";
-
-                    }
-                );
-
+        if (mobileResourcesBtn && mobileSubmenu) {
+            mobileResourcesBtn.addEventListener('click', () => {
+                const isOpen = mobileSubmenu.classList.toggle('open');
+                mobileResourcesBtn.setAttribute('aria-expanded', String(isOpen));
             });
+        }
 
+        const mobileVideosBtn = document.getElementById('mobileVideosBtn');
+        const mobileVideosSubmenu = document.getElementById('mobileVideosSubmenu');
 
-        /* Close mobile menu if screen becomes desktop */
-
-        window.addEventListener(
-            "resize",
-            function() {
-
-                if (window.innerWidth > 950) {
-
-                    mobileMenu.classList.remove("open");
-
-                    mobileSubmenu.classList.remove("open");
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuToggle.textContent = "☰";
-
-                }
-
-            }
-        );
-
+        if (mobileVideosBtn && mobileVideosSubmenu) {
+            mobileVideosBtn.addEventListener('click', () => {
+                const isOpen = mobileVideosSubmenu.classList.toggle('open');
+                mobileVideosBtn.setAttribute('aria-expanded', String(isOpen));
+            });
+        }
     </script>
 
 </body>
 </html>
-```
-
-
